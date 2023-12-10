@@ -1,12 +1,28 @@
 import React from 'react';
+import useSheduleContext from '../../hooks/useSheduleContext';
+import urlSecundary from '../../helper/urlTypes';
 import * as Style from './ListClient.css';
 import { FaUserEdit } from "react-icons/fa";
 import { TiUserDeleteOutline } from "react-icons/ti";
+import Message from '../Message/Message';
 
 
+const ListClient = ({data, loading}) => {
+  const {urlSchedule} = urlSecundary;
+  const { deleteElement } = useSheduleContext();
+  
+  if(loading) return <Message typeClass ='MessageLoading' typeSVG = {true} info='Carregando'/>
 
-const ListClient = ({datas}) => {
-    const {name, time, service, price} = datas;
+    
+    const {id, name, time, service, price} = data;
+
+    const handleDelete = (id) => {
+      if(window.confirm('Tem certeza que deseja excluir esse cliente?')) {
+        const url = `${urlSchedule}/${id}`;
+        deleteElement(url, 'delete');
+      }
+      
+    }
 
   return (
     <Style.ListClient>
@@ -20,7 +36,7 @@ const ListClient = ({datas}) => {
                     Editar
                 </button>
 
-                <button>
+                <button onClick={() => handleDelete(id)}>
                     <TiUserDeleteOutline />
                     Deletar
                 </button>

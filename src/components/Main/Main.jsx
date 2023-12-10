@@ -2,19 +2,23 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import * as Style from './Main.css'
 import ListClient from './ListClient';
+import {checkError, typeError} from '../../helper/errorRequest';
 import { IoTimer } from "react-icons/io5";
+import Message from '../Message/Message';
+import useSheduleContext from '../../hooks/useSheduleContext';
 
 const Main = () => {
-  const navegation = useNavigate();
-  const clientDatas = {
-    name: 'João Gomes',
-    time: '10:30',
-    service: 'Barba + Cabelo',
-    price: 70.00
-  }
 
+  const {datas , isLoading, error} = useSheduleContext();
+  const navegation = useNavigate();
+  
   const handleNavegate = () => {
     navegation('/register');
+  }
+
+  if(error) {
+    const configs = checkError(error, typeError.SHEDULE);
+    return <Message {...configs}/>
   }
 
   return (
@@ -33,9 +37,14 @@ const Main = () => {
         </Style.ButtonNewTime>
         
         <Style.GridList>
-          <ListClient datas={clientDatas}/>
-          <ListClient datas={clientDatas}/>
-          <ListClient datas={clientDatas}/>
+          {
+            datas && datas.map((cliente) => (
+              <ListClient key={cliente.id}
+                data={cliente}
+                loading={isLoading}
+              />
+            ))
+          }
         </Style.GridList>
         
       </div>

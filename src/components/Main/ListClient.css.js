@@ -88,5 +88,6 @@ export const ListDD = styled.dd`
         font-size: 1.3rem;
         color: #020617;
         font-weight: bold;
+        margin-right: 10px;
     }
 `

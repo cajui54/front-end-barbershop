@@ -31,7 +31,7 @@ export const Form = styled.form`
     align-items: center;
     background-color: #fff;
     width: 95%;
-    min-height: 50rem;
+    min-height: 60rem;
     margin: 20px auto;
     border-radius: 10px;
     box-shadow: 2px -5px 5px #94a3b8;
@@ -74,11 +74,11 @@ export const InputContainer = styled.div`
     box-sizing: border-box;
     width: 95%;
 
-    label {
+    label div {
         display: flex;
         justify-content: center;
         align-items: center;
-        margin: 10px auto;
+        margin: 20px auto;
     }
     p {
         margin-right: 10px;
@@ -102,20 +102,40 @@ export const InputContainer = styled.div`
         background-color: #e2e8f0;
         border-radius: 2px;
     }
-
+    .line-error-input {
+        border-bottom: 2px solid #fecaca;
+    }
+    .error-message {
+        background-color: #fee2e2;
+        color: #ef4444;
+        border: 1px solid #ef4444;
+        text-align: center;
+        font-size: 10px;
+        position: relative;
+        top: -10px;
+        padding: 5px 0;
+        width: 50%;
+        margin: 5px auto;
+        border-radius: 2px;
+    }
+    
 `
 export const SelectContainer = styled.div`
     margin-top: 20px;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     
     label {
+        width: 65%;
+    }
+    label div{
         position: relative;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        width: 45%;
+        
     }
     p {
         position: absolute;
@@ -124,6 +144,13 @@ export const SelectContainer = styled.div`
         font-size: .8rem;
         color: #fcd34d;
         letter-spacing: .2rem;
+    }
+    .error-message {
+        width: 90%;
+        position: relative;
+        color: #f87171;
+        text-align: center;
+        top: -10px;
     }
     select {
         width: 100%;
@@ -135,7 +162,7 @@ export const SelectContainer = styled.div`
     }
     option {
         text-align: center;
-        
+        padding: 5px 0;
     }
 `
 export const ResultsContainer = styled.div`
