@@ -5,25 +5,6 @@ export const FormContainer = styled.div`
     width: 100%;
     height: 100vh;
 
-    .btnCloseForm {
-        background-color: #dc2626;
-        color: #fff;
-        margin: 20px;
-        border: none;
-        width: 3rem;
-        height: 3rem;
-        border-radius: 50%;
-        cursor: pointer;
-        transition: all .5s ease-in-out;
-        text-align: center;
-        box-shadow:  0 0 5px #000;
-    }
-    .btnCloseForm:hover {
-        transform: scale(1.2);
-    }
-    .btnCloseForm svg {
-        font-size: 1.5rem;
-    }
 `
 export const Form = styled.form`
     display: flex;

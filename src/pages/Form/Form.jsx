@@ -12,10 +12,12 @@ import Message from '../../components/Message/Message';
 import {checkError, typeError} from '../../helper/errorRequest';
 import formatMoney from '../../utils/currencyConvert';
 import urlSecundary from '../../helper/urlTypes';
+import ButtonBack from '../../components/Buttons/ButtonBack';
 
 const Form = () => {
+    
     const {urlSchedule} = urlSecundary;
-    const {getDatas : times, isLoading: loadingTime, error: errorTime} = useTimeWorkContext();
+    const {datas : times, isLoading: loadingTime, error: errorTime} = useTimeWorkContext();
     const {datas: services, isLoading: loadingServide, error: errorService} = useServiceContext();
     const {datas: shedule, postElement} = useSheduleContext(); 
     const getOnlyTime = shedule && shedule.map(({time}) => time);
@@ -72,7 +74,6 @@ const Form = () => {
      }
      
     }
-
     const handleSelect = (e) => {
         const service = services?.find(service => service.id === e.target.value);
 
@@ -83,10 +84,9 @@ const Form = () => {
     }
   return (
     <Style.FormContainer>
-        <button className='btnCloseForm' onClick={handleBackToHome}>
-            <FaRegWindowClose />
-        </button>
 
+        <ButtonBack/>
+        
         <Style.Form onSubmit={(e) => e.preventDefault()}>
             <Style.LogoInfo>
                 <AiTwotoneSchedule />

@@ -7,7 +7,17 @@ export const ListClient = styled.div`
     @media screen and (min-width: 700px) {
         margin-left: 30px;
     }
- 
+    dl {
+        border-radius: 10px;
+    }
+    .serviceFinish {
+        background-color: #dcfce7;
+        transition: all .5s ease-in-out;
+    }
+    .loadingService {
+        background-color: #fef9c3;
+    }
+
 `
 export const ListDT = styled.dt `
        background-color: #020617;
@@ -79,6 +89,22 @@ export const ListDD = styled.dd`
         align-items: center;
         justify-content: space-between;
     }
+    .timeContainer button {
+        background-color: #14b8a6;
+        color: #fff;
+        font-weight: bold;
+        margin-right: 10px;
+        padding: 2px 10px;
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
+    }
+    .timeContainer svg {
+        margin-right: 5px;
+    }
+    .btnLoadClass {
+        background-color: #ca8a04 !important;
+    }
     .lable {
         color: #000;
         font-weight: bold;
@@ -89,5 +115,34 @@ export const ListDD = styled.dd`
         color: #020617;
         font-weight: bold;
         margin-right: 10px;
+    }
+`
+
+export const MenuButtons  = styled.menu`
+    margin-left: 10px;
+    width: 90%;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    button {
+        background-color: #34d399;
+        color: #fff;
+        font-weight: bold;
+        padding: 2px 5px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    svg {
+        margin: 0 5px;
+    }
+    .container-service-time {
+        font-size: 1.2rem;
+        color: #64748b;
+    }
+    .container-service-time span:last-child {
+        font-weight: bold;
+        color: #14b8a6;
     }
 `

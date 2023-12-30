@@ -6,11 +6,11 @@ export const ContextTimeWork = createContext();
 
 export const ContextTimeWorkProvider = ({children}) => {
     const {urlTimeWork} = urlSecundary;
-    const {datas, isLoading, error} = useAxios({url: urlTimeWork});
-    const getDatas = datas ? datas.data : datas;
+    let {datas, isLoading, error} = useAxios({url: urlTimeWork});
+    datas = datas ? datas.data : datas;
     
     return (
-        <ContextTimeWork.Provider value={{getDatas, isLoading, error}}>
+        <ContextTimeWork.Provider value={{datas, isLoading, error}}>
             {children}
         </ContextTimeWork.Provider>
     )

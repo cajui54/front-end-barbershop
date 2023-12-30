@@ -25,16 +25,30 @@ const useAxios = ({url, config = {}}) => {
     const postElement = async (_datas, urlSecundary ) => {
         try {
             
-            const response = await axiosInstance.post(urlSecundary, _datas);
+            await axiosInstance.post(urlSecundary, _datas);
 
             setCallFetch(true);
-            console.log(response);
+
             return 201;
 
         } catch (error) {
             window.alert('Ocorreu um error inesperado! \n '+ error);
             return error;
         }
+    }
+    const putElement = async (_datas, {urlSchedule}) => {
+        const _url = `${urlSchedule}/${_datas.id}`;
+
+        try {
+            const response = await axiosInstance.put(_url, _datas);
+            setCallFetch(true);
+            return response;
+
+        } catch (error) {
+            window.alert('Ocorreu um error inesperado! \n '+ error);
+            return error;
+        }
+     
     }
 
     useEffect(() => {
@@ -63,7 +77,7 @@ const useAxios = ({url, config = {}}) => {
     }, [callFetch]);
 
     
-    return {datas, isLoading, error, deleteElement, postElement};
+    return {datas, isLoading, error, deleteElement, postElement, putElement};
 }
 
 export default useAxios;

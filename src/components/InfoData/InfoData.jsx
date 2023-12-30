@@ -4,14 +4,16 @@ import { MdOutlineAttachMoney } from "react-icons/md";
 import Message from '../Message/Message';
 import formatMoney from '../../utils/currencyConvert';
 import { checkError, typeError } from '../../helper/errorRequest';
+import {useSelector} from 'react-redux';
 //Request
 import useSheduleContext from '../../hooks/useSheduleContext';
 import useTimeWorkContext from '../../hooks/useTimeWorkContext';
 
 const InfoData = () => {
     const {datas: sheduleData, isLoading: loadingShedule, error: errorShedule} = useSheduleContext(); 
-    const {getDatas: dataTimeWork, isLoading: loadingTime, error: errorTime} = useTimeWorkContext();
-    
+    const {datas: dataTimeWork, isLoading: loadingTime, error: errorTime} = useTimeWorkContext();
+    const invoicing = useSelector(({reducerSchedule}) => reducerSchedule); 
+    console.log(invoicing.ids);
     const addZero = (number) => {
         if(number < 10) return `0${number}`;
         return number;
@@ -76,7 +78,7 @@ const InfoData = () => {
                 <Style.CardResults>
                     <p>
                         <span>
-                            {formatMoney.format(100)}  
+                            {formatMoney.format(invoicing.currency)}  
                         </span>
                          Atual
                     </p>

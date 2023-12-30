@@ -12,6 +12,16 @@ const Main = () => {
   const {datas , isLoading, error} = useSheduleContext();
   const navegation = useNavigate();
   
+  const convertTime = (time) => {
+    return parseFloat(time.split(':').join('.'));
+  }
+  const compare = (a, b) => {
+    if(convertTime(a.time) > convertTime(b.time)) return 1;
+    else if (convertTime(a.time) < convertTime(b.time)) return -1;
+    return 0;
+  }
+  const sheduleDataSort = datas && datas.sort(compare);
+  
   const handleNavegate = () => {
     navegation('/register');
   }
@@ -38,7 +48,7 @@ const Main = () => {
         
         <Style.GridList>
           {
-            datas && datas.map((cliente) => (
+            datas && sheduleDataSort.map((cliente) => (
               <ListClient key={cliente.id}
                 data={cliente}
                 loading={isLoading}

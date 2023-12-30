@@ -3,7 +3,7 @@ import userReducer from './slice/sliceSchedule'
 
 const store = configureStore({
     reducer : {
-        schedule: userReducer
+        reducerSchedule: userReducer
     }
 });
 
