@@ -101,6 +101,7 @@ const Form = () => {
                         <input
                             type="text"
                             {...register("name", {required: true})}
+                            autoComplete='off'
                         />
                     </div>
                     

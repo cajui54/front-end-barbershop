@@ -110,6 +110,7 @@ const FormEdit = () => {
                 <input
                   type="text" 
                   {...register('name', {required: true})}
+                  autoComplete='off'
                 />
               </label>
               {errors?.name && <p>Preencha o campo nome é obrigatório!</p>}
