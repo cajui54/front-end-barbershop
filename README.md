@@ -8,7 +8,7 @@ Aplicação feito para gerênciar uma Barbearia
 - Styled-Components
 - React-Routes
 - Context-API
-- Consumo de API com json-server hospodado no vercel url:(https://barbershop-jks.vercel.app/)
+- Consumo de API com json-server hospedado no vercel url:(https://barbershop-jks.vercel.app/)
 
 
 
