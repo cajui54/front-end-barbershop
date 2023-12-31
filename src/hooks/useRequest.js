@@ -58,8 +58,8 @@ const useAxios = ({url, config = {}}) => {
         const requestDatas = async () => {
             
             try {  
-                //const response = await axiosInstance.get(url, config);
-                const response = await axios('https://barbershop-jks.vercel.app/scheduleClient');
+                const response = await axiosInstance.get(url, config);
+    
                 setDatas(response);
             } catch (err) {
                 setError(err);
