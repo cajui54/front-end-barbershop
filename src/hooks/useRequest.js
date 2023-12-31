@@ -1,5 +1,6 @@
 import axiosInstance from '../helper/axiosIntance';
 import { useState, useEffect, useRef } from 'react';
+import axios from 'axios';
 
 const useAxios = ({url, config = {}}) => {
     const [callFetch, setCallFetch] = useState(false);
@@ -57,7 +58,8 @@ const useAxios = ({url, config = {}}) => {
         const requestDatas = async () => {
             
             try {  
-                const response = await axiosInstance.get(url, config);
+                //const response = await axiosInstance.get(url, config);
+                const response = await axios('https://barbershop-jks.vercel.app/scheduleClient');
                 setDatas(response);
             } catch (err) {
                 setError(err);

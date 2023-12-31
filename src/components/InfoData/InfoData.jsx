@@ -13,13 +13,11 @@ const InfoData = () => {
     const {datas: sheduleData, isLoading: loadingShedule, error: errorShedule} = useSheduleContext(); 
     const {datas: dataTimeWork, isLoading: loadingTime, error: errorTime} = useTimeWorkContext();
     const invoicing = useSelector(({reducerSchedule}) => reducerSchedule); 
-    console.log(invoicing.ids);
     const addZero = (number) => {
         if(number < 10) return `0${number}`;
         return number;
     }
 
-  
     if(errorShedule || errorTime) {
         const {SHEDULE ,TIMEOFWORK} = typeError
         const objeError = errorShedule ? errorShedule : errorTime;
