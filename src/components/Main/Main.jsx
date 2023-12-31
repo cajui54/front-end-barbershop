@@ -11,7 +11,8 @@ const Main = () => {
 
   const {datas , isLoading, error} = useSheduleContext();
   const navegation = useNavigate();
-  
+  console.log(datas);
+
   const convertTime = (time) => {
     return parseFloat(time.split(':').join('.'));
   }

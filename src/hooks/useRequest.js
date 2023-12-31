@@ -52,6 +52,7 @@ const useAxios = ({url, config = {}}) => {
     }
 
     useEffect(() => {
+        
         const controller = new AbortController();
         const requestDatas = async () => {
             
