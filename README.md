@@ -5,6 +5,9 @@ Aplicação feito para gerênciar uma Barbearia
 ## Skills aplicadas no FrontEmd
 
 - React.JS
+- Redux/ Toolkits
+- React-Icons
+- React Form
 - Styled-Components
 - React-Routes
 - Context-API
