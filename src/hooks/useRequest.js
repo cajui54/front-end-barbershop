@@ -8,7 +8,6 @@ const useAxios = ({url, config = {}}) => {
     const [error, setError] = useState('');
     const effectRun = useRef(false);
     
-    
     const deleteElement = async (url, method) => {
         try {
             const response = await axiosInstance[method](url);
@@ -58,7 +57,6 @@ const useAxios = ({url, config = {}}) => {
             
             try {  
                 const response = await axiosInstance.get(url, config);
-            
                 setDatas(response);
             } catch (err) {
                 setError(err);
