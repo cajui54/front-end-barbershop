@@ -5,6 +5,9 @@ Aplicação feito para gerênciar uma Barbearia
 ## Skills aplicadas no FrontEmd
 
 - React.JS
+- Redux/ Toolkits
+- React-Icons
+- React Form
 - Styled-Components
 - React-Routes
 - Context-API
@@ -14,5 +17,4 @@ Aplicação feito para gerênciar uma Barbearia
 ## Projeto em Funcionamento
 ![Video_1703962998](https://github.com/cajui54/front-end-barbershop/assets/42698730/86bf2723-1d76-4824-92e4-206f6344b55d)
 
-//baseURL: 'https://barbershop-jks.vercel.app/'
 
