@@ -67,7 +67,7 @@ const useAxios = ({url, config = {}}) => {
             
         }
         
-        requestDatas(callFetch);
+        requestDatas();
 
         return () => {
             controller.abort();
