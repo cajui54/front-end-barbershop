@@ -2,7 +2,7 @@
 
 Aplicação feito para gerênciar uma Barbearia
 
-## Skills aplicadas no FrontEmd
+## Skills aplicadas no FrontEnd
 
 - React.JS
 - Redux/ Toolkits
